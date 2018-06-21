@@ -15,8 +15,8 @@ new L.tileLayer('http://{s}.basemaps.cartocdn.com/light_nolabels/{z}/{x}/{y}.png
 attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, &copy; <a href="http://cartodb.com/attributions">CartoDB</a>'
 }).addTo(map);
 
-// Edit to upload GeoJSON data file from your local directory ct-towns-density.geojson changed to Gemeenten.geojson
-$.getJSON("Gemeenten.geojson", function (data) {
+// Edit to upload GeoJSON data file from your local directory ct-towns-density.geojson changed to pc4.geojson
+$.getJSON("pc4.geojson", function (data) {
   geoJsonLayer = L.geoJson(data, {
     style: style,
     onEachFeature: onEachFeature
