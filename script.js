@@ -34,7 +34,6 @@ function getColor(d) {
          d > 300 ? '#FC4E2A' :
          d > 200 ? '#FD8D3C' :
          d > 100 ? '#FEB24C' :
-         d > 50  ? '#FED976' :
                    '#FFEDA0';
 }
 
@@ -87,7 +86,7 @@ info.onAdd = function (map) {
 // Edit info box text and variables (such as props.density2010) to match those in your GeoJSON data
 info.update = function (props) {
   this._div.innerHTML = '<h4>Aantal inwoners uit MOE-landen</h4>' +  (props ?
-    '<b>' + props.PC4CODE + '</b><br />' + props.density + ' inwoners uit MOE-landen'
+    '<b>' + ' postcodegebied' + props.PC4CODE + '</b><br />' + props.density + ' inwoners uit MOE-landen'
     : 'Beweeg met de muis over de kaart');
 };
 info.addTo(map);
@@ -98,7 +97,7 @@ info.addTo(map);
 var legend = L.control({position: 'bottomright'});
 legend.onAdd = function (map) {
   var div = L.DomUtil.create('div', 'info legend'),
-    grades = [0, 50, 100, 200, 300, 400, 500, 600],
+    grades = [0, 100, 200, 300, 400, 500, 600],
     labels = [],
     from, to;
   for (var i = 0; i < grades.length; i++) {
