@@ -34,7 +34,7 @@ function getColor(d) {
          d > 300 ? '#FC4E2A' :
          d > 200 ? '#FD8D3C' :
          d > 100 ? '#FEB24C' :
-         d > 50  ? '#FED976' :
+         //d > 50  ? '#FED976' :
                     '#FFEDA0';
 }
 
@@ -98,7 +98,7 @@ info.addTo(map);
 var legend = L.control({position: 'bottomright'});
 legend.onAdd = function (map) {
   var div = L.DomUtil.create('div', 'info legend'),
-    grades = [0, 20, 50, 100, 200, 300, 400, 500],
+    grades = [0, 100, 100, 200, 300, 400, 500, 600],
     labels = [],
     from, to;
   for (var i = 0; i < grades.length; i++) {
