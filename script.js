@@ -28,13 +28,13 @@ $.getJSON("PC4CODE-density.geojson", function (data) {
 // Edit ranges and colors to match your data; see http://colorbrewer.org
 // Any values not listed in the ranges below displays as the last color
 function getColor(d) {
-  return d > 500 ? '#800026' :
-         d > 400 ? '#BD0026' :
-         d > 300  ? '#E31A1C' :
-         d > 200  ? '#FC4E2A' :
-         d > 100  ? '#FD8D3C' :
-         d > 50   ? '#FEB24C' :
-         d > 20   ? '#FED976' :
+  return d > 600 ? '#800026' :
+         d > 500 ? '#BD0026' :
+         d > 400  ? '#E31A1C' :
+         d > 300  ? '#FC4E2A' :
+         d > 200  ? '#FD8D3C' :
+         d > 100   ? '#FEB24C' :
+         d > 50   ? '#FED976' :
                     '#FFEDA0';
 }
 
