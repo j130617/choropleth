@@ -11,9 +11,11 @@ var map = L.map('map', {
 //map.attributionControl.addAttribution('Population data &copy; <a href="http://census.gov/">US Census</a>');
 
 // Basemap layer
-new L.tileLayer('http://{s}.basemaps.cartocdn.com/light_nolabels/{z}/{x}/{y}.png', {
-attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, &copy; <a href="http://cartodb.com/attributions">CartoDB</a>'
-}).addTo(map);
+new L.tileLayer('https://cartodb-basemaps-{s}.global.ssl.fastly.net/light_all/{z}/{x}/{y}.png', {
+    attribution: 'Map by <a href="http://openstreetmap.org">OpenStreetMap</a>, Map tile by <a href="https://carto.com/attribution">CARTO</a>',
+    maxZoom: 18,
+  }).addTo(map);
+   
 
 // Edit to upload GeoJSON data file from your local directory ct-towns-density.geojson changed to pc4.geojson
 $.getJSON("PC4CODE-density.geojson", function (data) {
