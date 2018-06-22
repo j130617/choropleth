@@ -28,11 +28,11 @@ $.getJSON("PC4CODE-density.geojson", function (data) {
 function getColor(d) {
   return d > 500 ? '#800026' :
          d > 400 ? '#BD0026' :
-         d > 200  ? '#E31A1C' :
-         d > 100  ? '#FC4E2A' :
-         d > 50  ? '#FD8D3C' :
-         d > 20   ? '#FEB24C' :
-         d > 10   ? '#FED976' :
+         d > 300  ? '#E31A1C' :
+         d > 200  ? '#FC4E2A' :
+         d > 100  ? '#FD8D3C' :
+         d > 50   ? '#FEB24C' :
+         d > 20   ? '#FED976' :
                     '#FFEDA0';
 }
 
@@ -41,7 +41,7 @@ function style(feature) {
   return {
     fillColor: getColor(feature.properties.density),
     weight: 1,
-    opacity: 05,
+    opacity: 1,
     color: 'black',
     fillOpacity: 0.3
   };
@@ -84,9 +84,9 @@ info.onAdd = function (map) {
 
 // Edit info box text and variables (such as props.density2010) to match those in your GeoJSON data
 info.update = function (props) {
-  this._div.innerHTML = '<h4>Connecticut Town<br />Population density 2010</h4>' +  (props ?
-    '<b>' + props.town + '</b><br />' + props.density2010 + ' people / mi<sup>2</sup>'
-    : 'Hover over a town');
+  this._div.innerHTML = '<h4>Postcodegebied<br />Bevolkingsdichtheid arbeidsmigranten</h4>' +  (props ?
+    '<b>' + props.PC4CODE + '</b><br />' + props.density + ' mensen / mi<sup>2</sup>'
+    : 'Ga met de cursor over de gebieden');
 };
 info.addTo(map);
 
@@ -95,7 +95,7 @@ info.addTo(map);
 var legend = L.control({position: 'bottomright'});
 legend.onAdd = function (map) {
   var div = L.DomUtil.create('div', 'info legend'),
-    grades = [0, 30, 50, 100, 200, 500, 1000, 5000],
+    grades = [0, 20, 50, 100, 200, 300, 400, 500],
     labels = [],
     from, to;
   for (var i = 0; i < grades.length; i++) {
