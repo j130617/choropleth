@@ -29,11 +29,9 @@ $.getJSON("PC4CODE-density.geojson", function (data) {
 // Any values not listed in the ranges below displays as the last color
 function getColor(d) {
   return d > 600 ? '#800026' :
-         d > 500 ? '#BD0026' :
-         d > 400 ? '#E31A1C' :
+         d > 450 ? '#BD0026' :
          d > 300 ? '#FC4E2A' :
-         d > 200 ? '#FD8D3C' :
-         d > 100 ? '#FEB24C' :
+         d > 150 ? '#FEB24C' :
                    '#FFEDA0';
 }
 
@@ -86,7 +84,7 @@ info.onAdd = function (map) {
 // Edit info box text and variables (such as props.density2010) to match those in your GeoJSON data
 info.update = function (props) {
   this._div.innerHTML = '<h4>Aantal inwoners uit MOE-landen</h4>' +  (props ?
-    '<b>' + ' postcodegebied' + props.PC4CODE + '</b><br />' + props.density + ' inwoners uit MOE-landen'
+    '<b>' + ' postcodegebied ' + props.PC4CODE + '</b><br />' + props.density + ' inwoners uit MOE-landen'
     : 'Beweeg met de muis over de kaart');
 };
 info.addTo(map);
@@ -97,7 +95,7 @@ info.addTo(map);
 var legend = L.control({position: 'bottomright'});
 legend.onAdd = function (map) {
   var div = L.DomUtil.create('div', 'info legend'),
-    grades = [0, 100, 200, 300, 400, 500, 600],
+    grades = [0, 150, 300, 450, 600],
     labels = [],
     from, to;
   for (var i = 0; i < grades.length; i++) {
