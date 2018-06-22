@@ -30,11 +30,11 @@ $.getJSON("PC4CODE-density.geojson", function (data) {
 function getColor(d) {
   return d > 600 ? '#800026' :
          d > 500 ? '#BD0026' :
-         d > 400  ? '#E31A1C' :
-         d > 300  ? '#FC4E2A' :
-         d > 200  ? '#FD8D3C' :
-         d > 100   ? '#FEB24C' :
-         d > 50   ? '#FED976' :
+         d > 400 ? '#E31A1C' :
+         d > 300 ? '#FC4E2A' :
+         d > 200 ? '#FD8D3C' :
+         d > 100 ? '#FEB24C' :
+         d > 50  ? '#FED976' :
                     '#FFEDA0';
 }
 
