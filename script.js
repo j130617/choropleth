@@ -88,7 +88,7 @@ info.onAdd = function (map) {
 info.update = function (props) {
   this._div.innerHTML = (props ?
     '<b>' 'Postcodegebied' + props.PC4CODE + '</b><br />' + props.density + ' inwoners uit MOE-landen'
-    : 'Ga met de cursor over de gebieden');
+    : 'Beweeg met de muis over de kaart');
 };
 info.addTo(map);
 
