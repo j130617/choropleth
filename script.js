@@ -6,9 +6,9 @@ var map = L.map('map', {
 });
 
 // Edit links to your GitHub repo and data source credit
-map.attributionControl
-.setPrefix('View <a href="http://github.com/jackdougherty/leaflet-map-polygon-hover">open-source code on GitHub</a>, created with <a href="http://leafletjs.com" title="A JS library for interactive maps">Leaflet</a>');
-map.attributionControl.addAttribution('Population data &copy; <a href="http://census.gov/">US Census</a>');
+//map.attributionControl
+//.setPrefix('View <a href="http://github.com/jackdougherty/leaflet-map-polygon-hover">open-source code on GitHub</a>, created with <a href="http://leafletjs.com" title="A JS library for interactive maps">Leaflet</a>');
+//map.attributionControl.addAttribution('Population data &copy; <a href="http://census.gov/">US Census</a>');
 
 // Basemap layer
 new L.tileLayer('http://{s}.basemaps.cartocdn.com/light_nolabels/{z}/{x}/{y}.png', {
@@ -16,7 +16,7 @@ attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreet
 }).addTo(map);
 
 // Edit to upload GeoJSON data file from your local directory ct-towns-density.geojson changed to pc4.geojson
-$.getJSON("pc4.geojson", function (data) {
+$.getJSON("PC4CODE-density.geojson", function (data) {
   geoJsonLayer = L.geoJson(data, {
     style: style,
     onEachFeature: onEachFeature
@@ -26,24 +26,24 @@ $.getJSON("pc4.geojson", function (data) {
 // Edit ranges and colors to match your data; see http://colorbrewer.org
 // Any values not listed in the ranges below displays as the last color
 function getColor(d) {
-  return d > 5000 ? '#800026' :
-         d > 1000 ? '#BD0026' :
-         d > 500  ? '#E31A1C' :
-         d > 200  ? '#FC4E2A' :
-         d > 100  ? '#FD8D3C' :
-         d > 50   ? '#FEB24C' :
-         d > 30   ? '#FED976' :
+  return d > 500 ? '#800026' :
+         d > 400 ? '#BD0026' :
+         d > 200  ? '#E31A1C' :
+         d > 100  ? '#FC4E2A' :
+         d > 50  ? '#FD8D3C' :
+         d > 20   ? '#FEB24C' :
+         d > 10   ? '#FED976' :
                     '#FFEDA0';
 }
 
 // Edit the getColor property to match data column header in your GeoJson file
 function style(feature) {
   return {
-    fillColor: getColor(feature.properties.density2010),
+    fillColor: getColor(feature.properties.density),
     weight: 1,
-    opacity: 1,
+    opacity: 05,
     color: 'black',
-    fillOpacity: 0.7
+    fillOpacity: 0.3
   };
 }
 
