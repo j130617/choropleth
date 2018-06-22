@@ -34,7 +34,7 @@ function getColor(d) {
          d > 300 ? '#FC4E2A' :
          d > 200 ? '#FD8D3C' :
          d > 100 ? '#FEB24C' :
-         //d > 50  ? '#FED976' :
+         d > 50  ? '#FED976' :
                     '#FFEDA0';
 }
 
