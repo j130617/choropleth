@@ -35,7 +35,7 @@ function getColor(d) {
          d > 200 ? '#FD8D3C' :
          d > 100 ? '#FEB24C' :
          d > 50  ? '#FED976' :
-                    '#FFEDA0';
+                   '#FFEDA0';
 }
 
 // Edit the getColor property to match data column header in your GeoJson file
